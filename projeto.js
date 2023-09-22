@@ -51,3 +51,30 @@ function exibirMenu() {
 }
 
 exibirMenu();
+
+
+
+
+
+
+
+
+
+
+
+
+
+function criarReserva() {
+  const solicitante = prompt("Nome do solicitante:");
+  const data = prompt("Data da reserva (no formato dia-mes-ano):");
+  const horario = prompt("Horário da reserva:");
+  const sala = prompt("Sala desejada:");
+  const finalidade = prompt("Finalidade da reunião:");
+
+  const reserva = {
+    solicitante: solicitante,
+    data: data,
+    horario: horario,
+    sala: sala,
+    finalidade: finalidade,
+  };
