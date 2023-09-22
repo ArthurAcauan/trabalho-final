@@ -7,9 +7,10 @@ function criarReserva() {
   // Implementar criação de reserva
 }
 
-function visualizarReservas() {
-  // Implementar visualização de reservas
-}
+ function visualizarReservas(reservas) {
+    console.log("Você digitou 2. Iremos mostrar todas as reservas");
+    console.log(reservas);
+  }
 
 function editarReserva() {
   // Implementar edição de reserva
