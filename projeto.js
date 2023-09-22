@@ -85,27 +85,25 @@ function criarReserva() {
 
 
 
-  /****************************
+/****************************
 *ESTRUTURA BASE PARA UM MENU*
 *****************************/
 const reservas = [];
 
 function criarReserva() {
-  const nomeSolicitante = reservas.prompt('Nome do solicitante: ');
-  const data = reservas.prompt('Data da reserva (DD/MM/AAAA): ');
-  const horario = reservas.prompt('Horário da reserva (HH:MM): ');
-  const salaDesejada = reservas.prompt('Sala desejada: ');
-  const finalidade = reservas.prompt('Finalidade da reunião: ');
+  const solicitante = prompt("Nome do solicitante:");
+  const data = prompt("Data da reserva (no formato dia-mes-ano):");
+  const horario = prompt("Horário da reserva:");
+  const sala = prompt("Sala desejada:");
+  const finalidade = prompt("Finalidade da reunião:");
 
   const reserva = {
-    nomeSolicitante,
-    data,
-    horario,
-    salaDesejada,
-    finalidade,
-  };
-  reservas.push(reserva);
-  console.log('Reserva criada com sucesso!');
+    solicitante: solicitante,
+    data: data,
+    horario: horario,
+    sala: sala,
+    finalidade: finalidade,
+}
 }
 
 
