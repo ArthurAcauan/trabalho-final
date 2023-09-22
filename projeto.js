@@ -12,8 +12,10 @@ function criarReserva() {
     console.log(reservas);
   }
 
-function editarReserva() {
-  // Implementar edição de reserva
+function deletarReserva(reservas) {
+    const deletar = Number(prompt(`Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar.`))
+    reservas.splice(deletar, 1);
+    console.log(`Tudo certo! Sua reserva de índice ${deletar} $foi cancelada`)
 }
 
 function deletarReserva() {
