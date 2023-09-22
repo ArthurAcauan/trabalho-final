@@ -18,10 +18,6 @@ function deletarReserva(reservas) {
     console.log(`Tudo certo! Sua reserva de índice ${deletar} $foi cancelada`)
 }
 
-function deletarReserva() {
-  // Implementar exclusão de reserva
-}
-
 function exibirMenu() {
   console.log("Menu:");
   console.log("1. Criar Reserva");
