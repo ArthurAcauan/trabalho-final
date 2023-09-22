@@ -21,9 +21,19 @@ function criarReserva() {
 
 
 function visualizarReservas() {
-  console.log("Você digitou 2. Iremos mostrar todas as reservas");
-    console.log(reservas);
-}
+    console.log("Você digitou 2. Iremos mostrar todas as reservas");
+    if (reservas.length === 0) {
+      console.log('Não há reservas para mostrar');
+    } else {
+      reservas.forEach(element => {
+        console.log('Solicitante: ' + element.solicitante);
+        console.log('Data: ' + element.data);
+        console.log('Horário: ' + element.horario);
+        console.log('Finalidade: ' + element.finalidade);
+      });
+    }
+  }
+  
 
 function editarReserva() {
 }
