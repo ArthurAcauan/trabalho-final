@@ -19,28 +19,45 @@ function criarReserva() {
   reservas.push(reserva);
 }
 
-
 function visualizarReservas() {
-    console.log("Você digitou 2. Iremos mostrar todas as reservas");
-    if (reservas.length === 0) {
-      console.log('Não há reservas para mostrar');
-    } else {
-      reservas.forEach(element => {
-        console.log('Solicitante: ' + element.solicitante);
-        console.log('Data: ' + element.data);
-        console.log('Horário: ' + element.horario);
-        console.log('Finalidade: ' + element.finalidade);
-      });
-    }
+  console.log("Você digitou 2. Iremos mostrar todas as reservas");
+  if (reservas.length === 0) {
+    console.log('Não há reservas para mostrar');
+  } else {
+    let j = 0;
+    reservas.forEach(element => {
+      console.log("index: "+ j);
+      console.log('Solicitante: ' + element.solicitante);
+      console.log('Data: ' + element.data);
+      console.log('Horário: ' + element.horario);
+      console.log('Finalidade: ' + element.finalidade);
+      j++;
+    });
   }
-  
+}
 
 function editarReserva() {
+  const reservas = [];
+  const novoSolicitante = prompt("Digite o nome do novo solicitante:");
+  const novaData = prompt("Altere a data da reserva:");
+  const novoHorario = prompt("Altere o horario da sua reserva:");
+  const novaSala = prompt("Digite o numero da nova sala:");
+  const novaFinalidade = prompt("Digite uma nova finalidade:");
+
+  const editar = {
+    solicitante: novoSolicitante,
+    data: novaData,
+    horario: novoHorario,
+    sala: novaSala,
+    finalidade: novaFinalidade,
+  }
+  console.log("Sua reserva foi editada com sucesso!")
+  reservas.push(editar);
 }
 
 function deletarReserva() {
-  const deletar = parseInt(prompt(`Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar.`));
-  if (!isNaN(deletar) && deletar >= 1 && deletar <= reservas.length) {
+  const deletar = Number(prompt(`Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar.`));
+  if (typeof(deletar) && deletar >= 1 && deletar <= reservas.length) {
     reservas.splice(deletar - 1, 1);
     console.log(`Tudo certo! Sua reserva de índice ${deletar} foi cancelada.`);
   } else {
@@ -79,5 +96,4 @@ function exibirMenu() {
 
   exibirMenu();
 }
-
 exibirMenu();
