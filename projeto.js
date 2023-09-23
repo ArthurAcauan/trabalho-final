@@ -37,7 +37,8 @@ function visualizarReservas() {
 }
 
 function editarReserva() {
-  const reservas = [];
+  visualizarReservas();
+  let indiceEditar = prompt("Qual o indice da reserva que você quer editar?")
   const novoSolicitante = prompt("Digite o nome do novo solicitante:");
   const novaData = prompt("Altere a data da reserva:");
   const novoHorario = prompt("Altere o horario da sua reserva:");
@@ -52,7 +53,7 @@ function editarReserva() {
     finalidade: novaFinalidade,
   }
   console.log("Sua reserva foi editada com sucesso!")
-  reservas.push(editar);
+  reservas[indiceEditar] = editar;
 }
 
 function deletarReserva() {
