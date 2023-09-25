@@ -44,5 +44,6 @@ Este é um programa básico para criar, visualizar, editar e apagar reservas de 
 
 Espero que este README ajude a entender e utilizar o seu programa de reserva de salas de reunião. Se tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato.
 
-##Contatos:
+## Contatos:
 camilaperes@gmail.com
+arthurfelipeacauan@gmail.com
