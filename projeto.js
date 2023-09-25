@@ -1,4 +1,4 @@
-//Trabalho Final
+//Trabalho final
 const reservas = [];
 
 function criarReserva() {
@@ -24,48 +24,52 @@ function visualizarReservas() {
   if (reservas.length === 0) {
     console.log('Não há reservas para mostrar');
   } else {
-    let j = 0;
-    reservas.forEach(element => {
-      console.log("index: "+ j);
+    reservas.forEach((element, index) => {
+      console.log("index: " + index);
       console.log('Solicitante: ' + element.solicitante);
       console.log('Data: ' + element.data);
       console.log('Horário: ' + element.horario);
       console.log('Finalidade: ' + element.finalidade);
-      j++;
     });
   }
 }
 
 function editarReserva() {
   visualizarReservas();
-  let indiceEditar = prompt("Qual o indice da reserva que você quer editar?")
-  const novoSolicitante = prompt("Digite o nome do novo solicitante:");
-  const novaData = prompt("Altere a data da reserva:");
-  const novoHorario = prompt("Altere o horario da sua reserva:");
-  const novaSala = prompt("Digite o numero da nova sala:");
-  const novaFinalidade = prompt("Digite uma nova finalidade:");
+  let indiceEditar = Number(prompt("Qual o índice da reserva que você quer editar?"));
+  if (indiceEditar >= 0 && indiceEditar < reservas.length) {
+    const novoSolicitante = prompt("Digite o nome do novo solicitante:");
+    const novaData = prompt("Altere a data da reserva:");
+    const novoHorario = prompt("Altere o horário da sua reserva:");
+    const novaSala = prompt("Digite o número da nova sala:");
+    const novaFinalidade = prompt("Digite uma nova finalidade:");
 
-  const editar = {
-    solicitante: novoSolicitante,
-    data: novaData,
-    horario: novoHorario,
-    sala: novaSala,
-    finalidade: novaFinalidade,
-  }
-  console.log("Sua reserva foi editada com sucesso!")
-  reservas[indiceEditar] = editar;
-}
+    const editar = {
+      solicitante: novoSolicitante,
+      data: novaData,
+      horario: novoHorario,
+      sala: novaSala,
+      finalidade: novaFinalidade,
+    }
 
-function deletarReserva() {
-  let deletar= Number(prompt("Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar: "));
-  if deletar >= 0 && deletar < reservas.length) {
-    reservas.splice(indice, 1);
-    console.log("Tudo certo! Sua reserva de índice ${deletar} foi cancelada.")
+    console.log("Sua reserva foi editada com sucesso!");
+    reservas[indiceEditar] = editar;
   } else {
     console.log("Índice de reserva inválido.");
   }
-  exibirMenu()
 }
+
+function deletarReserva() {
+  visualizarReservas();
+  let indiceDeletar = Number(prompt("Você digitou 4. Iremos cancelar sua reserva! Digite o índice da reserva para confirmar: "));
+  if (indiceDeletar >= 0 && indiceDeletar < reservas.length) {
+    reservas.splice(indiceDeletar, 1);
+    console.log(`Tudo certo! Sua reserva de índice ${indiceDeletar} foi cancelada.`);
+  } else {
+    console.log("Índice de reserva inválido.");
+  }
+}
+
 function exibirMenu() {
   console.log("Menu:");
   console.log("1. Criar Reserva");
