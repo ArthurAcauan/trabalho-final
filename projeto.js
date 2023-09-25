@@ -57,15 +57,15 @@ function editarReserva() {
 }
 
 function deletarReserva() {
-  const deletar = Number(prompt(`Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar.`));
-  if (typeof(deletar) && deletar >= 1 && deletar <= reservas.length) {
-    reservas.splice(deletar - 1, 1);
-    console.log(`Tudo certo! Sua reserva de índice ${deletar} foi cancelada.`);
+  let deletar= Number(prompt("Você digitou 4. Iremos cancelar sua reserva! Digite o indice da sua reserva para confirmar: "));
+  if deletar >= 0 && deletar < reservas.length) {
+    reservas.splice(indice, 1);
+    console.log("Tudo certo! Sua reserva de índice ${deletar} foi cancelada.")
   } else {
     console.log("Índice de reserva inválido.");
   }
+  exibirMenu()
 }
-
 function exibirMenu() {
   console.log("Menu:");
   console.log("1. Criar Reserva");
